@@ -5,7 +5,12 @@ function onClick(e) {
 
   let url = "https://dog-api.kinduff.com/api/facts?number=" + numFacts.toString();
   console.log(url);
-  fetch(url)
+  var headers = {}
+  fetch(url, {
+    method: "GET",
+    mode: 'cors',
+    headers: headers
+  })
     .then(function(response) {
       if (response.status != 200) {
         return {
