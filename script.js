@@ -3,7 +3,7 @@ function onClick(e) {
   // get number submitted
   let numFacts = document.getElementById('number').value;
 
-  let url = "https://dog-api.kinduff.com/api/facts?number=" + numFacts.toString();
+  let url = "https://cat-fact.herokuapp.com/facts";
   console.log(url);
   fetch(url)
     .then(function(response) {
