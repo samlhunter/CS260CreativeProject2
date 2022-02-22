@@ -12,8 +12,10 @@ function onClick(e) {
           text: "Error calling API service: " + response.statusText
         }
       }
+      console.log("Got response json");
       return response.json();
     }).then(function(json) {
+      console.log("Updating results");
       updateResults(json.text);
     });
 }
