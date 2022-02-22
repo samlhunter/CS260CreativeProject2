@@ -1,8 +1,5 @@
 function onClick(e) {
   e.preventDefault();
-  // get number submitted
-  let numFacts = document.getElementById('number').value;
-
   let url = "https://cat-fact.herokuapp.com/facts";
   console.log(url);
   fetch(url)
@@ -17,12 +14,14 @@ function onClick(e) {
     }).then(function(json) {
       console.log("Updating results");
       console.log(json);
-      updateResults(json.text);
+      updateResults(json[0]["text"]);
     });
 }
 
 function updateResults(info) {
-  document.getElementsByClassName('results').textContent = info;
+  console.log("updating results in function");
+  console.log(info);
+  document.getElementById('results').innerText = info;
 }
 
 document.getElementById('submit').addEventListener('click', onClick);
