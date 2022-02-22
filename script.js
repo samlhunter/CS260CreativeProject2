@@ -16,6 +16,7 @@ function onClick(e) {
       return response.json();
     }).then(function(json) {
       console.log("Updating results");
+      console.log(json);
       updateResults(json.text);
     });
 }
